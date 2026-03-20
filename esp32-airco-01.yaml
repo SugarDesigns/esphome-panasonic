@@ -1,0 +1,36 @@
+substitutions:
+  devicename: esp32-airco-01
+  long_devicename: Panasonic Climate Office
+
+esphome:
+  name: esp32-airco-01
+
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: ESP32C3
+  framework:
+    type: esp-idf
+
+external_components:
+  source: github://DomiStyle/esphome-panasonic-ac
+  components: [panasonic_ac]
+
+wifi:
+  ssid: "test"
+  password: "test1234"
+
+logger:
+
+api:
+
+ota:
+
+uart:
+  tx_pin: GPIO7
+  rx_pin: GPIO6
+  baud_rate: 9600
+  parity: EVEN
+
+climate:
+  - platform: panasonic_ac
+    name: "Panasonic AC"
